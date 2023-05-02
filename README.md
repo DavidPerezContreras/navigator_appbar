@@ -1,16 +1,11 @@
-# navigator_appbar
+#Nested Navigator.
 
-A new Flutter project.
+El código de este ejemplo muestra cómo resolver cuando queremos llamar a Navigator.push desde un padre mientras que el context sólo se propaga
+de arriba a abajo en el arbol de widgets.
 
-## Getting Started
+En el widget padre debemos crear un Globalkey que será el que le pasaremos al constructor Navigator(key:globalKey),
+Y al mismo tiempo utilizaremos ese globalKey para hacer que el Navigator hijo navegue al widget o NamedRoute que queramos desde el código del Padre. (onTap del BottomNavigationBarpor ejemplo, o incluso desde el Appbar)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+En este Ejemplo tenemos un Scaffold en el que el Body es un Navigator pero queremos hacer que dicho Navigator navegue hacia otras rutas desde el BottomNavigationBar,
+el cual es un Widget que pertenece al padre en el árbol de Widgets.
